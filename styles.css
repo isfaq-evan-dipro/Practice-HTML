@@ -1,0 +1,15 @@
+textarea {
+  background: #2d2d3c;
+  color: #ffffff;
+  resize: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  overflow: auto;
+}
+
+.preview-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
