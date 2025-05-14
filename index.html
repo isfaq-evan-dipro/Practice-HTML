@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-time HTML Editor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-5 bg-[#1e1e2e] text-white">
+  <h1 class="text-3xl font-bold mb-6">Real-time HTML Editor</h1>
+
+  <div id="editor-container" class="w-full max-w-6xl flex flex-col md:flex-row gap-6">
+    <textarea
+      id="editor"
+      class="w-full md:w-1/2 h-96 p-4 border border-gray-500 rounded-lg"
+      onkeyup="updatePreview()"
+    >
+<h3>Welcome to the real-time HTML editor!</h3>
+<p>Type HTML in this textarea, and it will magically appear in the frame beside.</p>
+    </textarea>
+
+    <div class="preview-container w-full md:w-1/2 h-96">
+      <iframe id="preview" class="w-full h-full rounded-lg bg-white"></iframe>
+    </div>
+  </div>
+
+  <footer class="text-sm mt-6 opacity-70 text-center">
+    Created by
+    <a href="https://www.facebook.com/isfaqevandipro" class="text-blue-400 hover:underline">Isfaq Evan Dipro</a>
+    &nbsp;|&nbsp; Hosted by 
+    <a href="#" class="text-blue-400 hover:underline">Vercel</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
