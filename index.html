@@ -1,37 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Real-time HTML Editor</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time HTML Editor</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-5 bg-[#1e1e2e] text-white">
-  <h1 class="text-3xl font-bold mb-6">Real-time HTML Editor</h1>
-
-  <div id="editor-container" class="w-full max-w-6xl flex flex-col md:flex-row gap-6">
-    <textarea
-      id="editor"
-      class="w-full md:w-1/2 h-96 p-4 border border-gray-500 rounded-lg"
-      onkeyup="updatePreview()"
-    >
-<h3>Welcome to the real-time HTML editor!</h3>
-<p>Type HTML in this textarea, and it will magically appear in the frame beside.</p>
-    </textarea>
-
-    <div class="preview-container w-full md:w-1/2 h-96">
-      <iframe id="preview" class="w-full h-full rounded-lg bg-white"></iframe>
+<body class="bg-gray-900 text-gray-100 flex flex-col items-center justify-center min-h-screen p-5">
+    <div class="max-w-6xl w-full space-y-6">
+        <header class="text-center">
+            <h1 class="text-4xl font-bold text-purple-400 mb-2">Real-time HTML Editor</h1>
+            <p class="text-gray-400">Edit HTML on the left and see instant results on the right</p>
+        </header>
+        
+        <div id="editor-container" class="w-full flex flex-col md:flex-row gap-6">
+            <div class="w-full md:w-1/2">
+                <label for="editor" class="block text-sm font-medium text-gray-300 mb-2">HTML Editor</label>
+                <textarea id="editor" class="w-full h-96 p-4 bg-gray-800 text-gray-100 rounded-lg border border-gray-700 focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors resize-none">
+<h3 class="text-xl font-semibold text-purple-400">Welcome to the real-time HTML editor!</h3>
+<p class="text-gray-300">Type HTML in this textarea, and it will magically appear in the frame beside.</p>
+<p class="mt-4 text-gray-400">Try adding some elements:</p>
+<ul class="list-disc pl-5 text-gray-400 mt-2">
+    <li>&lt;h1&gt;Heading&lt;/h1&gt;</li>
+    <li>&lt;p style="color: red;"&gt;Colored text&lt;/p&gt;</li>
+    <li>&lt;button class="bg-blue-500 px-4 py-2 rounded"&gt;Button&lt;/button&gt;</li>
+</ul>
+                </textarea>
+            </div>
+            
+            <div class="w-full md:w-1/2">
+                <label class="block text-sm font-medium text-gray-300 mb-2">Live Preview</label>
+                <div class="preview-container h-96 bg-white rounded-lg overflow-hidden border border-gray-700 shadow-lg">
+                    <iframe id="preview" class="w-full h-full"></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center text-gray-500 text-sm mt-8">
+            Created by <a href="https://www.facebook.com/isfaqevandipro" class="text-purple-400 hover:underline">Isfaq Evan Dipro</a> and hosted by <a href="#" class="text-purple-400 hover:underline">Vercel</a>
+        </footer>
     </div>
-  </div>
 
-  <footer class="text-sm mt-6 opacity-70 text-center">
-    Created by
-    <a href="https://www.facebook.com/isfaqevandipro" class="text-blue-400 hover:underline">Isfaq Evan Dipro</a>
-    &nbsp;|&nbsp; Hosted by 
-    <a href="#" class="text-blue-400 hover:underline">Vercel</a>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
