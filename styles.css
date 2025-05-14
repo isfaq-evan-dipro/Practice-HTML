@@ -1,15 +1,45 @@
-textarea {
-  background: #2d2d3c;
-  color: #ffffff;
-  resize: none;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 16px;
-  overflow: auto;
+/* Base styles */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.preview-container {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
+/* Custom scrollbar */
+textarea::-webkit-scrollbar,
+.preview-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+textarea::-webkit-scrollbar-track,
+.preview-container::-webkit-scrollbar-track {
+    background: #2d3748;
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb,
+.preview-container::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover,
+.preview-container::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* Preview iframe styling */
+#preview {
+    background: white;
+    color: #1a202c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #editor-container {
+        flex-direction: column;
+    }
+    
+    #editor-container > div {
+        width: 100%;
+    }
 }
